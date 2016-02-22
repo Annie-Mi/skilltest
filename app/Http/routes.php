@@ -25,7 +25,8 @@ Route::get('/', function () {
 | kernel and includes session state, CSRF protection, and more.
 |
 */
+//Home
+Route::get('/', 'HomeController@index');
 
-Route::group(['middleware' => ['web']], function () {
-    //
-});
+//Form
+Route::post('senddata', array('as' => 'senddata', 'uses' => 'FormController@sendData'));
